@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Clickable from './handlingEvent/clickEvent';
+import Toggle from './state/toggle';
+import ListItem from './list/map';
+import OnChange from './handlingEvent/onChangeEvent';
+import Add from './CRUD/add';
+import ListingAddedElements from './CRUD/ListingAddedElement';
+import ClearInputField from './CRUD/ClearInputField';
+import DeleteItem from './CRUD/delete';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+class Todo extends React.Component{
+    render(){
+        return(
+            <div>
+                <App />
+                <Clickable />
+                <Toggle />
+                <ListItem />
+                <OnChange />
+                <Add />
+                <ListingAddedElements />
+                <ClearInputField />
+                <DeleteItem />
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<Todo/>, document.getElementById('root'));
+
